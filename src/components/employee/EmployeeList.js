@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import the components we will need
 import EmployeeCard from './EmployeeCard'
-import EmployeeManager from '../../modules/EmployeeManager'
+import APIManager from '../../modules/APIManager'
 import './Employee.css'
 
 
@@ -13,8 +13,9 @@ class EmployeeList extends Component {
 
 componentDidMount(){
     console.log("EMPLOYEE LIST: ComponentDidMount");
+    const comp = "employees";
     //getAll from AnimalManager and hang on to that data; put it in state
-    EmployeeManager.getAll()
+    APIManager.getAll(comp)
     .then((employees) => {
         this.setState({
             employees: employees

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import the components we will need
 import AnimalCard from './AnimalCard'
-import AnimalManager from '../../modules/AnimalManager'
+import APIManager from '../../modules/APIManager'
 import './Animal.css'
 
 
@@ -13,8 +13,9 @@ class AnimalList extends Component {
 
 componentDidMount(){
     console.log("ANIMAL LIST: ComponentDidMount");
-    //getAll from AnimalManager and hang on to that data; put it in state
-    AnimalManager.getAll()
+    const comp = "animals";
+    //getAll from APIManager and hang on to that data; put it in state
+    APIManager.getAll(comp)
     .then((animals) => {
         this.setState({
             animals: animals

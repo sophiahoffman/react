@@ -20,11 +20,8 @@
         { "id": 3, "name": "Joe", "phoneNumber": "867-5031", "image": "./John_Doe.png"}  
     ],
     "owners-animals": [
-        { "id": 1, "animalId":1, "ownerId":1},
-        { "id": 2, "animalId":2, "ownerId":2},
-        { "id": 3, "animalId": 3, "ownerId":3},
-        { "id": 4, "animalId":1, "ownerId":2},
-        { "id": 5, "animalId":2, "ownerId": 3},
-        { "id": 6, "animalId": 3, "ownerId":1}
+        { "id": 1, "animalId":1, "ownerId":[1,2]},
+        { "id": 2, "animalId":2, "ownerId":[2,3]},
+        { "id": 3, "animalId": 3, "ownerId":[3,1]}
     ]
 }
