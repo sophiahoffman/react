@@ -1,0 +1,30 @@
+{
+    "animals": [
+        { "id": 1, "name": "Doodles", "breed": "Poodle", "image": "./dog.svg"},
+        { "id": 2, "name": "Decker", "breed": "German Sheperd", "image": "./dog.svg" },
+        { "id": 3, "name": "Esme", "breed": "Pitbull", "image": "./dog.svg" }
+    ],
+    "employees": [
+        { "id": 1, "name": "John", "startDate": "May 2018", "image": "./John_Doe.png"},
+        { "id": 2, "name": "Jill", "startDate": "May 2017", "image": "./John_Doe.png"},
+        { "id": 3, "name": "Joe", "startDate": "February 2016", "image": "./John_Doe.png"}  
+    ],
+    "locations": [
+        { "id": 1, "name": "North Nashville", "address": "300 Plus Park Drive", "phone": "867-5031"},
+        { "id": 2, "name": "South Nashville", "address": "300 Plus Park Drive", "phone": "867-5031"},
+        { "id": 3, "name": "West Nashville", "address": "300 Plus Park Drive", "phone": "867-5031"}  
+    ],
+    "owners": [
+        { "id": 1, "name": "John",  "phoneNumber": "867-5031", "image": "./John_Doe.png"},
+        { "id": 2, "name": "Jill",  "phoneNumber": "867-5031", "image": "./John_Doe.png"},
+        { "id": 3, "name": "Joe", "phoneNumber": "867-5031", "image": "./John_Doe.png"}  
+    ],
+    "owners-animals": [
+        { "id": 1, "animalId":1, "ownerId":1},
+        { "id": 2, "animalId":2, "ownerId":2},
+        { "id": 3, "animalId": 3, "ownerId":3},
+        { "id": 4, "animalId":1, "ownerId":2},
+        { "id": 5, "animalId":2, "ownerId": 3},
+        { "id": 6, "animalId": 3, "ownerId":1}
+    ]
+}
