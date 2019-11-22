@@ -20,5 +20,23 @@ export default {
   },
   getAnimals(id) {
     return fetch(`${remoteURL}/ownersAnimals?animalId=${id}&_expand=animal`.then(result => result.json()))
+  },
+  post(newObject, comp) {
+    return fetch(`${remoteURL}/${comp}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newObject)
+    }).then(data => data.json())
+  },
+  update(editedAnimal) {
+    return fetch(`${remoteURL}/animals/${editedAnimal.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedAnimal)
+    }).then(data => data.json());
   }
 }
