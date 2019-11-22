@@ -4,7 +4,7 @@ import EmployeeCard from './EmployeeCard'
 import APIManager from '../../modules/APIManager'
 import './Employee.css'
 
-let comp;
+
 class EmployeeList extends Component {
     //define what this component needs to render
     state = {
@@ -13,7 +13,7 @@ class EmployeeList extends Component {
 
 componentDidMount(){
     console.log("EMPLOYEE LIST: ComponentDidMount");
-    comp = "employees"
+    let comp = "employees"
     //getAll from AnimalManager and hang on to that data; put it in state
     APIManager.getAll(comp)
     .then((employees) => {
@@ -23,33 +23,48 @@ componentDidMount(){
     })
 }
 
+deleteEmployee = (id) => {
+  let comp = "employees";
+  APIManager.delete(id, comp)
+  .then(() => {
+    APIManager.getAll(comp)
+    .then((newEmployees) => {
+      this.setState({
+          employees: newEmployees
+      })
+    })
+  })
+}
+
 render(){
     console.log("EmployeeList: Render");
     
     return(
-      <div className="container-cards">
-        {this.state.employees.map(employee =>
-          <EmployeeCard 
-          key={employee.id} 
-          employee={employee}
-          deleteEmployee = {this.deleteEmployee} />
-        )}
-      </div>
+      <React.Fragment>
+            {/* //add this button above your display of animal cards */}
+          <section className="section-content">
+            <button type="button"
+                className="btn"
+                onClick={() => {this.props.history.push("/employees/new")}}>
+                Add New Employee
+            </button>
+          </section>
+  
+        <div className="container-cards">
+          {this.state.employees.map(employee =>
+            <EmployeeCard 
+            key={employee.id} 
+            employee={employee}
+            deleteEmployee = {this.deleteEmployee}
+            {...this.props}
+            />
+          )}
+        </div>
+    </React.Fragment>
     )
   }
 
-  deleteEmployee = (id) => {
-    comp = "employees";
-    APIManager.delete(id, comp)
-    .then(() => {
-      APIManager.getAll(comp)
-      .then((newEmployees) => {
-        this.setState({
-            employees: newEmployees
-        })
-      })
-    })
-  }
+
 
 }
 
