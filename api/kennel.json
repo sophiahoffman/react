@@ -1,66 +1,45 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle",
-      "image": "./dog.svg",
-      "active": true
+      "name": "jack",
+      "breed": "russell terrier",
+      "id": 1
     },
     {
       "id": 2,
-      "name": "Decker",
-      "breed": "German Sheperd",
-      "image": "./dog.svg",
-      "active": true
+      "name": "moet",
+      "breed": "orange tabby",
+      "employeeId": 3
     },
     {
-      "id": 5,
-      "name": "Esmerelda",
-      "breed": "Pitbull"
+      "name": "chandon",
+      "breed": "orange tabby",
+      "id": 3
     },
     {
-      "name": "dog",
-      "breed": "dog",
-      "id": 6
-    },
-    {
-      "name": "cat",
-      "breed": "cat",
-      "id": 7
+      "name": "golden",
+      "breed": "retriever",
+      "id": 4
     }
   ],
   "employees": [
     {
       "id": 1,
-      "name": "John",
-      "startDate": "May 2018",
-      "image": "./John_Doe.png",
-      "active": true
-    },
-    {
-      "id": 2,
       "name": "Jill",
-      "startDate": "May 2017",
-      "image": "./John_Doe.png",
-      "active": true
+      "startDate": "May 2018",
+      "locationId": 1
     },
     {
       "id": 3,
       "name": "Joe",
       "startDate": "February 2016",
-      "image": "./John_Doe.png",
-      "active": true
+      "locationId": 5
     },
     {
-      "name": "john doe",
-      "startDate": "June 2019",
-      "id": 4
-    },
-    {
-      "name": "Sia",
-      "startDate": "July 2017",
-      "id": 5
+      "name": "John",
+      "startDate": "June 2002",
+      "id": 4,
+      "locationId": 5
     }
   ],
   "locations": [
@@ -68,21 +47,19 @@
       "id": 1,
       "name": "North Nashville",
       "address": "300 Plus Park Drive",
-      "phone": "867-5031",
-      "active": true
+      "phoneNumber": "867-5031"
     },
     {
-      "id": 3,
-      "name": "West Nashville",
-      "address": "300 Plus Park Drive",
-      "phone": "867-5031",
-      "active": true
-    },
-    {
+      "id": 4,
       "name": "North Nashville",
       "address": "300 Plus Park Dr",
-      "phoneNumber": "888-555-1212",
-      "id": 4
+      "phoneNumber": "888-555-2323"
+    },
+    {
+      "name": "Nashville East",
+      "address": "300 Park Dr",
+      "phoneNumber": "9999999999",
+      "id": 5
     }
   ],
   "owners": [
@@ -90,62 +67,20 @@
       "id": 1,
       "name": "John",
       "phoneNumber": "867-5031",
-      "image": "./John_Doe.png",
-      "active": true
+      "image": "./John_Doe.png"
     },
     {
       "id": 2,
       "name": "Jill",
       "phoneNumber": "867-5031",
-      "image": "./John_Doe.png",
-      "active": true
+      "image": "./John_Doe.png"
     },
     {
       "id": 3,
       "name": "Joe",
       "phoneNumber": "867-5031",
-      "image": "./John_Doe.png",
-      "active": true
-    },
-    {
-      "name": [
-        "jim beam"
-      ],
-      "phoneNumber": [
-        "8885551212"
-      ],
-      "id": 4
-    },
-    {
-      "name": [
-        "jill doe"
-      ],
-      "phoneNumber": [
-        "1111234567"
-      ],
-      "id": 5
+      "image": "./John_Doe.png"
     }
   ],
-  "ownersAnimals": [
-    {
-      "id": 1,
-      "animalId": 1,
-      "ownerId": 1
-    },
-    {
-      "id": 4,
-      "animalId": 1,
-      "ownerId": 2
-    },
-    {
-      "id": 2,
-      "animalId": 2,
-      "ownerId": 2
-    },
-    {
-      "id": 5,
-      "animalId": 2,
-      "ownerId": 3
-    }
-  ]
+  "ownersAnimals": []
 }

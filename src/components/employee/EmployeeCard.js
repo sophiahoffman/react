@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 class EmployeeCard extends Component {
   render() {
-    let comp = "employees"
+
     return (
       <div className="card">
 
@@ -13,8 +13,10 @@ class EmployeeCard extends Component {
           </picture>
           <h3>Employee: <span className="card-EmployeeName">{this.props.employee.name} </span></h3>
             <p>Employee since: {this.props.employee.startDate} </p>
-            <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id, comp)}>Terminated</button>
+            <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id, this.props.state.comp)}>Terminated</button>
             <Link to={`/employees/${this.props.employee.id}`}><button>Details</button></Link>
+            <button type="button" onClick={() => {this.props.history.push(`/employees/${this.props.employee.id}/edit`)}}>Edit</button>
+
         </div>
       </div>
     );

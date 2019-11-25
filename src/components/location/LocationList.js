@@ -53,7 +53,10 @@ render(){
             <LocationCard 
             key={location.id} 
             location={location}
-            deleteLocation={this.deleteLocation} />
+            deleteLocation={this.deleteLocation}
+            state={this.state}
+            props={this.props} 
+            />
           )}
         </div>
       </React.Fragment>
