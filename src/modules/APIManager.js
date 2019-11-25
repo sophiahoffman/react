@@ -30,13 +30,25 @@ export default {
         body: JSON.stringify(newObject)
     }).then(data => data.json())
   },
-  update(editedAnimal) {
-    return fetch(`${remoteURL}/animals/${editedAnimal.id}`, {
+  update(editedObject, comp) {
+    return fetch(`${remoteURL}/${comp}/${editedObject.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(editedAnimal)
+      body: JSON.stringify(editedObject)
     }).then(data => data.json());
+  },
+  // employees get with Animal info
+  getWithAnimals(id, comp) {
+    return fetch(`${remoteURL}/${comp}/${id}?_embed=animals`)
+            .then(result => {
+              return result.json()})
+  },
+  // employees get with Animal info
+  getWithEmployees(id, comp) {
+    return fetch(`${remoteURL}/${comp}/${id}?_embed=employees`)
+            .then(result => {
+              return result.json()})
   }
 }

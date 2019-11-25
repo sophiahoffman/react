@@ -8,6 +8,8 @@ class AnimalEditForm extends Component {
       animalName: "",
       breed: "",
       loadingStatus: true,
+      employees:[],
+      comp: "animals",
     };
 
     handleFieldChange = evt => {
@@ -22,23 +24,28 @@ class AnimalEditForm extends Component {
       const editedAnimal = {
         id: this.props.match.params.animalId,
         name: this.state.animalName,
-        breed: this.state.breed
+        breed: this.state.breed,
+        employeeId: parseInt(this.state.employeeId),
       };
 
-      APIManager.update(editedAnimal)
+      APIManager.update(editedAnimal, this.state.comp)
       .then(() => this.props.history.push("/animals"))
     }
 
     componentDidMount() {
-        let comp = "animals"
-      APIManager.getOne(this.props.match.params.animalId, comp)
+
+      APIManager.getOne(this.props.match.params.animalId, this.state.comp)
       .then(animal => {
           this.setState({
             animalName: animal.name,
             breed: animal.breed,
+            employeeId: animal.employeeId,
             loadingStatus: false,
           });
       });
+
+      APIManager.getAll("employees")
+      .then(employees => this.setState({employees:employees}))
     }
 
     render() {
@@ -66,6 +73,19 @@ class AnimalEditForm extends Component {
                 value={this.state.breed}
               />
               <label htmlFor="breed">Breed</label>
+
+              <select
+                className="form-control"
+                id="employeeId"
+                value={this.state.employeeId}
+                onChange={this.handleFieldChange}
+              >
+                {this.state.employees.map(employee =>
+                  <option key={employee.id} value={employee.id}>
+                    {employee.name}
+                  </option>
+                )}
+              </select>
             </div>
             <div className="alignRight">
               <button
