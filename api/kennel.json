@@ -7,6 +7,30 @@
     },
     {
       "id": 2,
+<<<<<<< HEAD
+      "name": "Decker",
+      "breed": "German Sheperd",
+      "image": "./dog.svg",
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Esme",
+      "breed": "Pitbull",
+      "image": "./dog.svg"
+    },
+    {
+      "name": "dog",
+      "breed": "dog",
+      "image": "./dog.svg",
+      "id": 6
+    },
+    {
+      "name": "cat",
+      "breed": "cat",
+      "image": "./dog.svg",
+      "id": 7
+=======
       "name": "moet",
       "breed": "orange tabby",
       "employeeId": 3
@@ -20,6 +44,7 @@
       "name": "golden",
       "breed": "retriever",
       "id": 4
+>>>>>>> master
     }
   ],
   "employees": [
