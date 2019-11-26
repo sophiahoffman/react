@@ -20,7 +20,8 @@ class AnimalDetail extends Component {
       this.setState({
         name: animal.name,
         breed: animal.breed,
-        image: animal.image,
+        //in order to get image to show up, you have to put the require in the state part
+        image: require(`${animal.image}`),
         loadingStatus: false,
       });
 
@@ -42,7 +43,7 @@ class AnimalDetail extends Component {
       <div className="card">
         <div className="card-content">
           <picture>
-            <img src={require(`./dog.svg`)} alt="My Dog" />
+            <img src={this.state.image} alt="My Dog" />
 
           </picture>
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>

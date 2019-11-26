@@ -3,6 +3,7 @@
     {
       "name": "jack",
       "breed": "russell terrier",
+      "image": "./dog.svg",
       "id": 1
     },
     {

@@ -18,6 +18,7 @@ componentDidMount(){
     //getAll from APIManager and hang on to that data; put it in state
     APIManager.getAll(this.state.comp)
     .then((animals) => {
+      console.log(animals)
         this.setState({
             animals: animals
         })
