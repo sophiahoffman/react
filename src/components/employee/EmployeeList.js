@@ -9,13 +9,13 @@ class EmployeeList extends Component {
     //define what this component needs to render
     state = {
         employees: [],
+        comp: "employees"
     }
 
 componentDidMount(){
     console.log("EMPLOYEE LIST: ComponentDidMount");
-    let comp = "employees"
     //getAll from AnimalManager and hang on to that data; put it in state
-    APIManager.getAll(comp)
+    APIManager.getAll(this.state.comp)
     .then((employees) => {
         this.setState({
             employees: employees
@@ -24,10 +24,9 @@ componentDidMount(){
 }
 
 deleteEmployee = (id) => {
-  let comp = "employees";
-  APIManager.delete(id, comp)
+  APIManager.delete(id, this.state.comp)
   .then(() => {
-    APIManager.getAll(comp)
+    APIManager.getAll(this.state.comp)
     .then((newEmployees) => {
       this.setState({
           employees: newEmployees
@@ -56,6 +55,7 @@ render(){
             key={employee.id} 
             employee={employee}
             deleteEmployee = {this.deleteEmployee}
+            state={this.state}
             {...this.props}
             />
           )}

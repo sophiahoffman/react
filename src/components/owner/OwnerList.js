@@ -40,10 +40,13 @@ render(){
             <OwnerCard 
             key={owner.id} 
             owner={owner}
-            deleteOwner={this.deleteOwner} />
+            deleteOwner={this.deleteOwner}
+            {...this.props} 
+
+            />
           )}
         </div>
-      </ React.Fragment>
+      </React.Fragment>
     )
   }
 

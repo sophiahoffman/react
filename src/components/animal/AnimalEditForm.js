@@ -9,6 +9,8 @@ class AnimalEditForm extends Component {
       breed: "",
       image: "",
       loadingStatus: true,
+      employees:[],
+      comp: "animals",
     };
 
     handleFieldChange = evt => {
@@ -27,13 +29,13 @@ class AnimalEditForm extends Component {
         image: this.state.image,
       };
 
-      APIManager.update(editedAnimal)
+      APIManager.update(editedAnimal, this.state.comp)
       .then(() => this.props.history.push("/animals"))
     }
 
     componentDidMount() {
-        let comp = "animals"
-      APIManager.getOne(this.props.match.params.animalId, comp)
+
+      APIManager.getOne(this.props.match.params.animalId, this.state.comp)
       .then(animal => {
           this.setState({
             animalName: animal.name,
@@ -42,6 +44,9 @@ class AnimalEditForm extends Component {
             loadingStatus: false,
           });
       });
+
+      APIManager.getAll("employees")
+      .then(employees => this.setState({employees:employees}))
     }
 
     render() {
@@ -69,6 +74,19 @@ class AnimalEditForm extends Component {
                 value={this.state.breed}
               />
               <label htmlFor="breed">Breed</label>
+
+              <select
+                className="form-control"
+                id="employeeId"
+                value={this.state.employeeId}
+                onChange={this.handleFieldChange}
+              >
+                {this.state.employees.map(employee =>
+                  <option key={employee.id} value={employee.id}>
+                    {employee.name}
+                  </option>
+                )}
+              </select>
             </div>
             <div className="alignRight">
               <button
