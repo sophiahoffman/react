@@ -16,17 +16,20 @@
     },
     {
       "id": 5,
-      "name": "Esmerelda",
-      "breed": "Pitbull"
+      "name": "Esme",
+      "breed": "Pitbull",
+      "image": "./dog.svg"
     },
     {
       "name": "dog",
       "breed": "dog",
+      "image": "./dog.svg",
       "id": 6
     },
     {
       "name": "cat",
       "breed": "cat",
+      "image": "./dog.svg",
       "id": 7
     }
   ],
